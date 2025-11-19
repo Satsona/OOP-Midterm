@@ -55,6 +55,7 @@ public class Item : MonoBehaviour
         Destroy(gameObject);
     }
 
+    // ====== COLLISION METHODS ======
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

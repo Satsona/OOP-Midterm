@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR;
 
 public class Player : MonoBehaviour
 {
@@ -21,12 +22,14 @@ public class Player : MonoBehaviour
         Jump();
     }
 
+    // Basic Move Method
     private void Move()
     {
         float x = Input.GetAxis("Horizontal");
         rb.linearVelocity = new Vector2(x * moveSpeed, rb.linearVelocity.y);
     }
 
+    // Basic Jump Method
     private void Jump()
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -35,6 +38,7 @@ public class Player : MonoBehaviour
         }
     }
 
+   // Method WITH PARAMETERS
     public void TakeDamage(int amount)
     {
         health -= amount;
@@ -64,6 +68,8 @@ public class Player : MonoBehaviour
     {
         health += amount;
     }
+
+    // ====== COLLISION METHODS ======
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
